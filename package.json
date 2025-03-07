@@ -1,0 +1,27 @@
+{
+  "name": "temis",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A package that keeps all the settings for great tools in one place, making my TypeScript React development much easier and better, just for me.",
+  "homepage": "https://github.com/mewisland/temis#readme",
+  "bugs": {
+    "url": "https://github.com/mewisland/temis/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mewisland/temis.git"
+  },
+  "license": "MIT",
+  "author": "vew94",
+  "type": "module",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.28.1",
+    "@types/node": "^22.13.9",
+    "vitest": "^3.0.7"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
