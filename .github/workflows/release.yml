@@ -47,16 +47,12 @@ jobs:
         with:
           node-version: 22
           cache: "pnpm"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run:  |
           set -x
           pnpm install
-
-      # - name: Create Release Pull Request
-      #   uses: changesets/action@c8bada60c408975afd1a20b3db81d6eee6789308 # v1.4.9
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish npm
         run: |
