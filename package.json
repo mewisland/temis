@@ -14,6 +14,9 @@
   "license": "MIT",
   "author": "vew94",
   "type": "module",
+  "dependencies": {
+    "@commitlint/config-conventional": "19.8.0"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@changesets/changelog-github": "^0.5.1",
@@ -27,10 +30,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "lefthook"
-    ]
   }
 }
