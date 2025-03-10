@@ -10,7 +10,6 @@ _"My hesitation may one day become someone else’s answer.”_
 
 Temis is a package that centralizes the configuration for various development tools, making TypeScript and React development easier and more efficient.
 
-
 ## Motivation
 
 A package that keeps all the settings for great tools in one place, making my TypeScript React development much easier and better, just for me.
@@ -21,10 +20,10 @@ A package that keeps all the settings for great tools in one place, making my Ty
 - **Simplifies Development**: Streamline TypeScript and React development with pre-configured settings.
 - **Regular Updates**: Continuously updated for personal learning and improvement.
 
-
 ## Support Tools
 
 - [Biome](https://github.com/biomejs/biome) v1.9.4
+- [commitlint](https://github.com/conventional-changelog/commitlint) v19.8.0
 
 ## Installation
 
@@ -46,12 +45,25 @@ pnpm add --save-dev temis
 
 ### Biome
 
-```json
+```jsonc
+// biome.json
 {
   "extends": ["./node_modules/temis/configs/biome/biome.json"],
-  // If you find the rules too strict, please override the settings.
 }
 ```
+
+If you find the rules too strict, please override the settings.
+
+### commitlint
+
+```mjs
+// commitlint.config.mjs
+export default {
+  extends: ["./configs/commitlint/commitlint.config.mjs"],
+};
+```
+
+If you find the rules too strict, please override the settings.
 
 ## License
 
@@ -72,3 +84,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - Biome's `javascript.formatter.indentStyle` is set to `"space"`.
 - Biome's `javascript.formatter.indentWidth` is set to `2`.
 - Biome's `organizeImports` is not used. Instead, sorting is done with ESLint.
+
+### Commit Message Style
+
+- Follow Conventional Commits
+- Relax the rules regarding the number of characters
