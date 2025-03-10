@@ -59,7 +59,7 @@ If you find the rules too strict, please override the settings.
 ```mjs
 // commitlint.config.mjs
 export default {
-  extends: ["./configs/commitlint/commitlint.config.mjs"],
+  extends: ["./node_modules/temis/configs/commitlint/commitlint.config.mjs"],
 };
 ```
 
