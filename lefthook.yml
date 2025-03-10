@@ -1,0 +1,11 @@
+min_version: 1.10.0
+pre-commit:
+  jobs:
+    - name: check
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      run: pnpm dlx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
+pre-push:
+  jobs:
+    - name: packages audit
+      tags: frontend security
+      run: pnpm audit
