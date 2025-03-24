@@ -19,12 +19,13 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/node": "^22.13.9",
+    "@types/node": "22.13.9",
     "commitlint": "19.8.0",
-    "lefthook": "^1.11.3"
+    "lefthook": "1.11.3"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=22",
+    "pnpm": ">=10"
   },
   "publishConfig": {
     "access": "public"
