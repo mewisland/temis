@@ -16,13 +16,13 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@types/node':
-        specifier: ^22.13.9
+        specifier: 22.13.9
         version: 22.13.9
       commitlint:
         specifier: 19.8.0
         version: 19.8.0(@types/node@22.13.9)(typescript@5.8.2)
       lefthook:
-        specifier: ^1.11.3
+        specifier: 1.11.3
         version: 1.11.3
 
 packages:
