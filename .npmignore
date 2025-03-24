@@ -3,7 +3,8 @@
 /assets
 /node_modules
 
-biome.json
+./biome.json
+./commitlint.config.mjs
+
 CHANGELOG.md
-commitlint.config.mjs
 lefthook.yml
