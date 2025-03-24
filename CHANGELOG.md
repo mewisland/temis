@@ -1,13 +1,14 @@
 # temis
 
-## 0.2.0
+## v0.2.1
 
-### Minor Changes
+- Fix critical mistake in .npmignore
+- Refactor dependencies
 
-- support [commitlint](https://github.com/conventional-changelog/commitlint) v19.8.0
+## v0.2.0
 
-## 0.1.0
+- Support [commitlint](https://github.com/conventional-changelog/commitlint) v19.8.0
 
-### Minor Changes
+## v0.1.0
 
-- support [Biome](https://github.com/biomejs/biome) v1.9.4
+- Support [Biome](https://github.com/biomejs/biome) v1.9.4
