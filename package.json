@@ -14,6 +14,7 @@
   "license": "MIT",
   "author": "vew94",
   "type": "module",
+  "files": ["configs"],
   "dependencies": {
     "@commitlint/config-conventional": "19.8.0"
   },
