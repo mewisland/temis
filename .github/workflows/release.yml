@@ -4,7 +4,8 @@ name: Release
 on:
   workflow_dispatch:
   push:
-    tags: ["v*"]
+    branches:
+      - main
 
 permissions: {}
 
@@ -25,7 +26,8 @@ jobs:
     timeout-minutes: 5
 
     permissions:
-      contents: read
+      contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout
@@ -34,29 +36,10 @@ jobs:
       - name: Run actionlint
         run: |
           set -x
-          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:1.7.3
+          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+      - name: Run release-please
+        uses: google-github-actions/release-please-action@e4dc86ba9405554aeba3c6bb2d169500e7d3b4ee # v4.1.1
         with:
-          version: 10
-          run_install: false
-
-      - name: Install Node.js
-        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
-        with:
-          node-version: 22
-          cache: "pnpm"
-          registry-url: "https://registry.npmjs.org"
-
-      - name: Install dependencies
-        run:  |
-          set -x
-          pnpm install
-
-      - name: Publish npm
-        run: |
-          set -x
-          pnpm publish --no-git-checks
-        env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          release-type: node  # 他の言語の場合は変更（go, rust, simple, etc）
+          token: ${{ secrets.GITHUB_TOKEN }}
