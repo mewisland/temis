@@ -11,5 +11,4 @@ commit-msg:
 pre-push:
   jobs:
     - name: packages audit
-      tags: frontend security
       run: pnpm audit
