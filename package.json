@@ -1,6 +1,6 @@
 {
   "name": "temis",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": false,
   "description": "A package that centralizes settings for tools to simplify and improve TypeScript React development.",
   "homepage": "https://github.com/mewisland/temis#readme",
@@ -17,7 +17,9 @@
   "exports": {
     "./configs/biome.json": "./configs/biome/v1/biome.json"
   },
-  "files": ["configs"],
+  "files": [
+    "configs"
+  ],
   "dependencies": {
     "@commitlint/config-conventional": "19.8.0"
   },
