@@ -52,7 +52,7 @@ jobs:
       - name: Install dependencies
         run:  |
           set -x
-          pnpm ci
+          pnpm install --frozen-lockfile
 
       - name: Publish npm
         run: |
