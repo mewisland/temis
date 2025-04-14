@@ -2,7 +2,7 @@
   "name": "temis",
   "version": "0.2.1",
   "private": false,
-  "description": "A package that keeps all the settings for great tools in one place, making my TypeScript React development much easier and better, just for me.",
+  "description": "A package that centralizes settings for tools to simplify and improve TypeScript React development.",
   "homepage": "https://github.com/mewisland/temis#readme",
   "bugs": {
     "url": "https://github.com/mewisland/temis/issues"
