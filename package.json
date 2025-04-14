@@ -14,6 +14,9 @@
   "license": "MIT",
   "author": "vew94",
   "type": "module",
+  "exports": {
+    "./configs/biome.json": "./configs/biome/v1/biome.json"
+  },
   "files": ["configs"],
   "dependencies": {
     "@commitlint/config-conventional": "19.8.0"
