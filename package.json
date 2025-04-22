@@ -17,11 +17,24 @@
   "exports": {
     "./biome": "./configs/biome/v1/biome.json",
     "./biome/v1": "./configs/biome/v1/biome.json",
-    "./biome/v2": "./configs/biome/v2/biome.json"
+    "./biome/v2": "./configs/biome/v2/biome.json",
+    "./eslint": "./configs/eslint/eslint.config.js"
   },
   "files": ["configs"],
   "dependencies": {
-    "@commitlint/config-conventional": "19.8.0"
+    "@commitlint/config-conventional": "19.8.0",
+    "@eslint/css": "0.7.0",
+    "@eslint/js": "9.25.1",
+    "@eslint/json": "0.12.0",
+    "@eslint/markdown": "6.4.0",
+    "eslint": "9.25.1",
+    "eslint-plugin-react": "7.37.5",
+    "globals": "16.0.0",
+    "typescript-eslint": "8.31.0"
+  },
+  "optionalDependencies": {
+    "eslint": "^9.25.1",
+    "typescript-eslint": "^8.31.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
