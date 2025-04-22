@@ -3,11 +3,9 @@ name: Release
 
 on:
   workflow_dispatch:
-  pull_request:
-    paths: ["configs/**"]
   push:
     branches:
-      - main
+      - release
 
 permissions: {}
 
