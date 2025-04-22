@@ -44,29 +44,8 @@ pnpm add --save-dev temis
 ## Usage
 
 - [Biome](docs/biome.md)
-
-### commitlint
-
-```mjs
-// commitlint.config.mjs
-export default {
-  extends: ["./node_modules/temis/configs/commitlint/commitlint.config.mjs"],
-};
-```
-
-If you find the rules too strict, please override the settings.
+- [commitlint](docs/commitlint.md)
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Memo
-
-### Policy
-
-- For language specifications, we will complement it in a form that does not omit anything that can be omitted.
-
-### Commit Message Style
-
-- Follow Conventional Commits
-- Relax the rules regarding the number of characters
