@@ -1,3 +1,7 @@
 {
-  "conventionalCommits.scopes": ["deps", "release", "configs/eslint"]
+  "conventionalCommits.scopes": [
+    "deps",
+    "release",
+    "configs/eslint"
+  ]
 }
