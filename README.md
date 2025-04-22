@@ -43,16 +43,7 @@ pnpm add --save-dev temis
 
 ## Usage
 
-### Biome
-
-```jsonc
-// biome.json
-{
-  "extends": ["./node_modules/temis/configs/biome/biome.json"],
-}
-```
-
-If you find the rules too strict, please override the settings.
+- [Biome](docs/biome.md)
 
 ### commitlint
 
@@ -74,16 +65,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ### Policy
 
 - For language specifications, we will complement it in a form that does not omit anything that can be omitted.
-
-### Code Style
-
-- Biome's `javascript.formatter.arrowParentheses` is set to `"always"`.
-- Biome's `javascript.formatter.quoteProperties` is set to `"asNeeded"`.
-- Biome's `javascript.formatter.semicolons` is set to `"always"`.
-- Biome's `javascript.formatter.trailingCommas` is set to `"all"`.
-- Biome's `javascript.formatter.indentStyle` is set to `"space"`.
-- Biome's `javascript.formatter.indentWidth` is set to `2`.
-- Biome's `organizeImports` is not used. Instead, sorting is done with ESLint.
 
 ### Commit Message Style
 
