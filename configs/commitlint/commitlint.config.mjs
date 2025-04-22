@@ -1,6 +1,3 @@
-/**
- * @see https://commitlint.js.org/reference/rules.html
- */
 export default {
   extends: ["@commitlint/config-conventional"],
   rules: {
