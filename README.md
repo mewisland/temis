@@ -24,6 +24,8 @@ A package that keeps all the settings for great tools in one place, making my Ty
 
 - [Biome](https://github.com/biomejs/biome) v1.9.4
 - [commitlint](https://github.com/conventional-changelog/commitlint) v19.8.0
+- [ESLint](https://github.com/eslint/eslint) v9.25.1
+  - with [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) v8.31.0, and more plugins
 
 ## Installation
 
@@ -45,6 +47,7 @@ pnpm add --save-dev temis
 
 - [Biome](docs/biome.md)
 - [commitlint](docs/commitlint.md)
+- [ESLint](docs/eslint.md)
 
 ## License
 
