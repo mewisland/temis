@@ -20,7 +20,9 @@
     "./biome/v2": "./configs/biome/v2/biome.json",
     "./eslint": "./configs/eslint/eslint.config.js"
   },
-  "files": ["configs"],
+  "files": [
+    "configs"
+  ],
   "dependencies": {
     "@commitlint/config-conventional": "19.8.0",
     "@eslint/css": "0.7.0",
@@ -32,15 +34,15 @@
     "globals": "16.0.0",
     "typescript-eslint": "8.31.0"
   },
-  "optionalDependencies": {
-    "eslint": "^9.25.1",
-    "typescript-eslint": "^8.31.0"
-  },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/node": "22.13.9",
     "commitlint": "19.8.0",
     "lefthook": "1.11.3"
+  },
+  "optionalDependencies": {
+    "eslint": "^9.25.1",
+    "typescript-eslint": "^8.31.0"
   },
   "engines": {
     "node": ">=22",
