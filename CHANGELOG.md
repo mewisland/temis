@@ -1,5 +1,17 @@
 # temis
 
+## [0.4.0](https://github.com/mewisland/temis/compare/v0.3.0...v0.4.0) (2025-04-22)
+
+
+### Features
+
+* **configs/eslint:** ✨ add ESLint ([86545b3](https://github.com/mewisland/temis/commit/86545b3c8c80b4041fe9798f084552cb5dec6de8))
+
+
+### Bug Fixes
+
+* **package.json:** update exports for biome ([f2b62b7](https://github.com/mewisland/temis/commit/f2b62b7b671e907fcd7b9759b3e1c69349fcfd6f))
+
 ## [0.3.0](https://github.com/mewisland/temis/compare/v0.2.1...v0.3.0) (2025-04-14)
 
 
