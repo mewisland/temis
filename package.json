@@ -40,10 +40,6 @@
     "commitlint": "19.8.0",
     "lefthook": "1.11.3"
   },
-  "optionalDependencies": {
-    "eslint": "^9.25.1",
-    "typescript-eslint": "^8.31.0"
-  },
   "engines": {
     "node": ">=22",
     "pnpm": ">=10"
