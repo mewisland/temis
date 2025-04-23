@@ -23,6 +23,9 @@
   "files": [
     "configs"
   ],
+  "scripts": {
+    "eslint:inspect": "eslint --inspect-config"
+  },
   "dependencies": {
     "@commitlint/config-conventional": "19.8.0",
     "@eslint/css": "0.7.0",
