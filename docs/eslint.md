@@ -14,6 +14,7 @@ export default defineConfig(recommendConfigs);
 - @eslint/js
 - @eslint/json
 - @eslint/markdown
+- @stylistic/eslint-plugin
 - eslint
 - eslint-plugin-import
 - eslint-plugin-jsdoc
