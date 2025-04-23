@@ -8,6 +8,7 @@ import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
 import jsdoc from "eslint-plugin-jsdoc";
 import pluginImport from "eslint-plugin-import";
+import stylistic from "@stylistic/eslint-plugin";
 
 export default defineConfig([
   {
@@ -158,6 +159,52 @@ export default defineConfig([
     rules: {
       "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
       "import/no-duplicates": "error",
+    },
+  },
+  {
+    name: "@stylistic",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    plugins: {
+      "@stylistic": stylistic,
+    },
+    rules: {
+      "@stylistic/jsx-pascal-case": "error",
+      "@stylistic/jsx-self-closing-comp": [
+        "error",
+        {
+          component: true,
+          html: true,
+        },
+      ],
+      "@stylistic/lines-around-comment": [
+        "error",
+        {
+          allowArrayStart: true,
+          allowBlockStart: true,
+          allowClassStart: true,
+          allowEnumStart: true,
+          allowInterfaceStart: true,
+          allowModuleStart: true,
+          allowObjectStart: true,
+          allowTypeStart: true,
+          beforeBlockComment: true,
+        },
+      ],
+      "@stylistic/padding-line-between-statements": [
+        "error",
+        { blankLine: "always", next: "return", prev: "*" },
+        { blankLine: "always", next: "*", prev: ["const", "let", "var"] },
+        {
+          blankLine: "any",
+          next: ["const", "let", "var"],
+          prev: ["const", "let", "var"],
+        },
+        { blankLine: "always", next: "*", prev: "directive" },
+        { blankLine: "any", next: "directive", prev: "directive" },
+        { blankLine: "always", next: "*", prev: ["case", "default"] },
+        { blankLine: "always", next: "*", prev: "multiline-block-like" },
+      ],
+      "@stylistic/spaced-comment": ["error", "always"],
     },
   },
   pluginReact.configs.flat.recommended,
