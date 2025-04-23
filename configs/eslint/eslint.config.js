@@ -11,6 +11,7 @@ import pluginImport from "eslint-plugin-import";
 import stylistic from "@stylistic/eslint-plugin";
 import pluginSonar from "eslint-plugin-sonarjs";
 import pluginReactHooks from "eslint-plugin-react-hooks";
+import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 
 export default defineConfig([
   {
@@ -268,6 +269,11 @@ export default defineConfig([
       "react/no-danger": "error",
       "react-hooks/exhaustive-deps": "error",
     },
+  },
+  {
+    name: "jsx-a11y",
+    files: ["**/*.{jsx,tsx}"],
+    extends: [pluginJsxA11y.flatConfigs.recommended],
   },
   {
     files: ["**/*.json"],
