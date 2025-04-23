@@ -233,7 +233,39 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     extends: [pluginSonar.configs.recommended],
   },
-  pluginReact.configs.flat.recommended,
+  {
+    name: "react",
+    files: ["**/*.{jsx,tsx}"],
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+    extends: [
+      pluginReact.configs.flat.recommended,
+      pluginReact.configs.flat["jsx-runtime"],
+    ],
+    rules: {
+      "react/destructuring-assignment": "error",
+      "react/function-component-definition": [
+        "error",
+        {
+          namedComponents: "arrow-function",
+          unnamedComponents: "arrow-function",
+        },
+      ],
+      "react/hook-use-state": "error",
+      "react/jsx-boolean-value": ["error", "always"],
+      "react/jsx-curly-brace-presence": "error",
+      "react/jsx-fragments": "error",
+      "react/jsx-no-bind": "error",
+      "react/jsx-no-leaked-render": "error",
+      "react/jsx-no-useless-fragment": "error",
+      "react/jsx-pascal-case": "off",
+      "react/jsx-sort-props": "off",
+      "react/no-danger": "error",
+    },
+  },
   {
     files: ["**/*.json"],
     plugins: { json },
