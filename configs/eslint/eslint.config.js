@@ -19,9 +19,17 @@ export default defineConfig([
     ],
   },
   {
+    name: "eslint",
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     plugins: { js },
     extends: ["js/recommended"],
+    rules: {
+      "arrow-body-style": ["error", "always"],
+      curly: ["error", "all"],
+      "no-implicit-coercion": "error",
+      "prefer-template": "error",
+      "require-await": "error",
+    },
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
