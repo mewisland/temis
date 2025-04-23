@@ -18,7 +18,9 @@ export default defineConfig(recommendConfigs);
 - eslint
 - eslint-plugin-import
 - eslint-plugin-jsdoc
+- eslint-plugin-jsx-a11y
 - eslint-plugin-react
+- eslint-plugin-react-hooks
 - eslint-plugin-sonarjs
 - typescript-eslint
 
