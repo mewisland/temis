@@ -19,6 +19,7 @@ export default defineConfig(recommendConfigs);
 - eslint-plugin-import
 - eslint-plugin-jsdoc
 - eslint-plugin-react
+- eslint-plugin-sonarjs
 - typescript-eslint
 
 ## Policy

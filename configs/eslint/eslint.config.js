@@ -9,6 +9,7 @@ import { defineConfig } from "eslint/config";
 import jsdoc from "eslint-plugin-jsdoc";
 import pluginImport from "eslint-plugin-import";
 import stylistic from "@stylistic/eslint-plugin";
+import pluginSonar from "eslint-plugin-sonarjs";
 
 export default defineConfig([
   {
@@ -226,6 +227,11 @@ export default defineConfig([
       ],
       "@stylistic/spaced-comment": ["error", "always"],
     },
+  },
+  {
+    name: "sonarjs",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    extends: [pluginSonar.configs.recommended],
   },
   pluginReact.configs.flat.recommended,
   {
