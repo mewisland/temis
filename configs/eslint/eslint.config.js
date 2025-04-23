@@ -25,6 +25,11 @@ export default defineConfig([
     ],
   },
   {
+    name: "global/globals",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    languageOptions: { globals: globals.browser },
+  },
+  {
     name: "eslint",
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     plugins: { js },
@@ -36,10 +41,6 @@ export default defineConfig([
       "prefer-template": "error",
       "require-await": "error",
     },
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
-    languageOptions: { globals: globals.browser },
   },
   {
     name: "typescript-eslint",
@@ -276,30 +277,35 @@ export default defineConfig([
     extends: [pluginJsxA11y.flatConfigs.recommended],
   },
   {
+    name: "@eslint/json/JSON",
     files: ["**/*.json"],
     plugins: { json },
     language: "json/json",
     extends: ["json/recommended"],
   },
   {
+    name: "@eslint/json/JSONC",
     files: ["**/*.jsonc"],
     plugins: { json },
     language: "json/jsonc",
     extends: ["json/recommended"],
   },
   {
+    name: "@eslint/json/JSON5",
     files: ["**/*.json5"],
     plugins: { json },
     language: "json/json5",
     extends: ["json/recommended"],
   },
   {
+    name: "@eslint/markdown",
     files: ["**/*.md"],
     plugins: { markdown },
     language: "markdown/gfm",
     extends: ["markdown/recommended"],
   },
   {
+    name: "@eslint/css",
     files: ["**/*.css"],
     plugins: { css },
     language: "css/css",
