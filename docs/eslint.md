@@ -15,6 +15,7 @@ export default defineConfig(recommendConfigs);
 - @eslint/json
 - @eslint/markdown
 - eslint
+- eslint-plugin-import
 - eslint-plugin-jsdoc
 - eslint-plugin-react
 - typescript-eslint

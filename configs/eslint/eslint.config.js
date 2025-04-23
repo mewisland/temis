@@ -7,6 +7,7 @@ import markdown from "@eslint/markdown";
 import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
 import jsdoc from "eslint-plugin-jsdoc";
+import pluginImport from "eslint-plugin-import";
 
 export default defineConfig([
   {
@@ -146,6 +147,17 @@ export default defineConfig([
           startLines: 1,
         },
       ],
+    },
+  },
+  {
+    name: "import",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    plugins: {
+      import: pluginImport,
+    },
+    rules: {
+      "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
+      "import/no-duplicates": "error",
     },
   },
   pluginReact.configs.flat.recommended,
