@@ -38,7 +38,27 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: { globals: globals.browser },
   },
-  tseslint.configs.recommended,
+  {
+    name: "typescript-eslint",
+    extends: [
+      ...tseslint.configs.strictTypeChecked,
+      ...tseslint.configs.stylisticTypeChecked,
+    ],
+    files: ["**/*.{ts,tsx}"],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    rules: {
+      "@typescript-eslint/consistent-return": "error",
+      "@typescript-eslint/consistent-type-exports": "error",
+      "@typescript-eslint/consistent-type-imports": "error",
+      "@typescript-eslint/require-array-sort-compare": "error",
+      "@typescript-eslint/switch-exhaustiveness-check": "error",
+    },
+  },
   {
     name: "jsdoc",
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
