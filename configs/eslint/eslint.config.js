@@ -10,6 +10,7 @@ import jsdoc from "eslint-plugin-jsdoc";
 import pluginImport from "eslint-plugin-import";
 import stylistic from "@stylistic/eslint-plugin";
 import pluginSonar from "eslint-plugin-sonarjs";
+import pluginReactHooks from "eslint-plugin-react-hooks";
 
 export default defineConfig([
   {
@@ -244,6 +245,7 @@ export default defineConfig([
     extends: [
       pluginReact.configs.flat.recommended,
       pluginReact.configs.flat["jsx-runtime"],
+      pluginReactHooks.configs.recommended,
     ],
     rules: {
       "react/destructuring-assignment": "error",
@@ -264,6 +266,7 @@ export default defineConfig([
       "react/jsx-pascal-case": "off",
       "react/jsx-sort-props": "off",
       "react/no-danger": "error",
+      "react-hooks/exhaustive-deps": "error",
     },
   },
   {
