@@ -9,6 +9,16 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
+    name: "global/ignores",
+    ignores: [
+      ".next/**/*",
+      "dist/**/*",
+      "node_modules/**/*",
+      "out/**/*",
+      "public/**/*",
+    ],
+  },
+  {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     plugins: { js },
     extends: ["js/recommended"],
