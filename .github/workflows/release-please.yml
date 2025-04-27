@@ -30,11 +30,6 @@ jobs:
       pull-requests: write
 
     steps:
-      - name: Run actionlint
-        run: |
-          set -x
-          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint
-
       - name: Run release-please
         uses: googleapis/release-please-action@a02a34c4d625f9be7cb89156071d8567266a2445 # v4.2.0
         id: release
@@ -44,6 +39,12 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@e3d2460bbb42d7710191569f88069044cfb9d8cf # v4.2.2
+        if: ${{ steps.release.outputs.release_created }}
+
+      - name: Run actionlint
+        run: |
+          set -x
+          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Install pnpm
