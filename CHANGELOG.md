@@ -1,5 +1,17 @@
 # temis
 
+## [0.5.0](https://github.com/mewisland/temis/compare/v0.4.0...v0.5.0) (2025-04-27)
+
+
+### Features
+
+* **configs/eslint:** ✨ add @stylistic/eslint-plugin ([ec20695](https://github.com/mewisland/temis/commit/ec20695ce92a965218cf085a8aeddb3baa2ed33b))
+* **configs/eslint:** ✨ add eslint-plugin-import ([325c784](https://github.com/mewisland/temis/commit/325c784a2b9c102b7a7afad3e22ed29d775a49ab))
+* **configs/eslint:** ✨ add eslint-plugin-jsdoc ([df72662](https://github.com/mewisland/temis/commit/df7266294a6a5280a4e1cf2819a9f98dd0f5664e))
+* **configs/eslint:** ✨ add eslint-plugin-jsx-a11y ([4627aff](https://github.com/mewisland/temis/commit/4627affacd6e2a71bd286604f002c5e76e66fa97))
+* **configs/eslint:** ✨ add eslint-plugin-react-hooks ([9d308a2](https://github.com/mewisland/temis/commit/9d308a230a27d0236663da397d0e47aa8161848e))
+* **configs/eslint:** ✨ add eslint-plugin-sonarjs ([1bba30e](https://github.com/mewisland/temis/commit/1bba30ed8c8523a02c2e235b6d702bee9d2b91ca))
+
 ## [0.4.0](https://github.com/mewisland/temis/compare/v0.3.0...v0.4.0) (2025-04-22)
 
 
