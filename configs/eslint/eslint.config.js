@@ -57,6 +57,7 @@ export default defineConfig([
     },
     rules: {
       "@typescript-eslint/consistent-return": "error",
+      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/consistent-type-exports": "error",
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/require-array-sort-compare": "error",
