@@ -1,5 +1,14 @@
 # temis
 
+## [0.6.0](https://github.com/mewisland/temis/compare/v0.5.0...v0.6.0) (2025-04-29)
+
+
+### Features
+
+* **configs/eslint:** ✨ add @typescript-eslint/consistent-type-definitions ([b19ffa4](https://github.com/mewisland/temis/commit/b19ffa418862995f68bb087f9d6f912452cb1792))
+* **configs/eslint:** ✨ add @vitest/eslint-plugin ([fce3b67](https://github.com/mewisland/temis/commit/fce3b679fcf199357fe23f6d67536d77c259dbee))
+* **configs/eslint:** ✨ add/edit eslint-plugin-react rules ([7650736](https://github.com/mewisland/temis/commit/76507360af294b9d3a3a83c760d15f363efdb84c))
+
 ## [0.5.0](https://github.com/mewisland/temis/compare/v0.4.0...v0.5.0) (2025-04-27)
 
 
