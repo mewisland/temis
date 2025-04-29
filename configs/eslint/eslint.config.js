@@ -12,6 +12,7 @@ import stylistic from "@stylistic/eslint-plugin";
 import pluginSonar from "eslint-plugin-sonarjs";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
+import vitest from "@vitest/eslint-plugin";
 
 export default defineConfig([
   {
@@ -278,6 +279,27 @@ export default defineConfig([
     name: "jsx-a11y",
     files: ["**/*.{jsx,tsx}"],
     extends: [pluginJsxA11y.flatConfigs.recommended],
+  },
+  {
+    name: "vitest",
+    files: ["**/*.spec.{js,mjs,cjs,ts,jsx,tsx}"],
+    settings: {
+      vitest: {
+        typecheck: true,
+      },
+    },
+    languageOptions: {
+      globals: {
+        ...vitest.environments.env.globals,
+      },
+    },
+    plugins: {
+      vitest,
+    },
+    rules: {
+      ...vitest.configs.all.rules,
+      "vitest/no-done-callback": "off",
+    },
   },
   {
     name: "@eslint/json/JSON",

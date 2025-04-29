@@ -3,9 +3,9 @@
 ```js
 import { defineConfig } from "eslint/config";
 
-import recommendConfigs from "temis/configs/eslint";
+import temisConfigs from "temis/eslint";
 
-export default defineConfig(recommendConfigs);
+export default defineConfig(temisConfigs);
 ```
 
 ## Support Plugins
@@ -15,6 +15,7 @@ export default defineConfig(recommendConfigs);
 - @eslint/json
 - @eslint/markdown
 - @stylistic/eslint-plugin
+- @vitest/eslint-plugin
 - eslint
 - eslint-plugin-import
 - eslint-plugin-jsdoc
