@@ -40,7 +40,7 @@ export default defineConfig(temisConfigs);
 | eslint                                                                              | v9.25.1     |
 | eslint-plugin-boundaries                                                            | v5.0.1      |
 | eslint-plugin-import                                                                | v2.31.0     |
-| [eslint-plugin-import-access](https://github.com/uhyo/eslint-plugin-import-access)  | v2.2.0      |
+| [eslint-plugin-import-access](https://github.com/uhyo/eslint-plugin-import-access)  | v2.2.2      |
 | eslint-plugin-jsdoc                                                                 | v50.6.9     |
 | eslint-plugin-jsx-a11y                                                              | v6.10.2     |
 | [eslint-plugin-perfectionist](https://perfectionist.dev)                            | v4.12.3     |
