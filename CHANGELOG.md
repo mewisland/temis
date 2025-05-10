@@ -1,5 +1,12 @@
 # temis
 
+## [0.7.0](https://github.com/mewisland/temis/compare/v0.6.0...v0.7.0) (2025-05-10)
+
+
+### Features
+
+* **configs/eslint:** ✨ add eslint-plugin-import-access ([d8ad2b7](https://github.com/mewisland/temis/commit/d8ad2b7d6f775c2023a31ac08ae4381e668f4173))
+
 ## [0.6.0](https://github.com/mewisland/temis/compare/v0.5.0...v0.6.0) (2025-04-29)
 
 
