@@ -134,16 +134,6 @@ export default defineConfig([
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/consistent-type-exports": "error",
       "@typescript-eslint/consistent-type-imports": "error",
-      "@typescript-eslint/naming-convention": [
-        "warn",
-        {
-          selector: "variable",
-          format: ["camelCase"],
-          regex:
-            "^(?!data$|info$|value$|temp$|obj$|thing$|stuff$|item$|flag$|obj\\d*|data\\d*|tmp\\d*).+$",
-          match: true,
-        },
-      ],
       "@typescript-eslint/require-array-sort-compare": "error",
       "@typescript-eslint/switch-exhaustiveness-check": "error",
     },
