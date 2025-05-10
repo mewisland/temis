@@ -15,6 +15,7 @@ import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 import pluginUnicorn from "eslint-plugin-unicorn";
 import vitest from "@vitest/eslint-plugin";
+import pluginBoundaries from "eslint-plugin-boundaries";
 
 export default defineConfig([
   {
@@ -31,6 +32,56 @@ export default defineConfig([
     name: "global/globals",
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: { globals: globals.browser },
+  },
+  {
+    name: "boundaries",
+    settings: {
+      "boundaries/elements": [
+        { type: "shared", pattern: "src/shared/*" },
+        { type: "entities", pattern: "src/entities/*" },
+        { type: "features", pattern: "src/features/*" },
+        { type: "widgets", pattern: "src/widgets/*" },
+        { type: "pages", pattern: "src/pages/*" },
+        { type: "processes", pattern: "src/processes/*" },
+        { type: "app", pattern: "src/app" },
+      ],
+    },
+    plugins: {
+      boundaries: pluginBoundaries,
+    },
+    rules: {
+      ...pluginBoundaries.configs.recommended.rules,
+      "boundaries/element-types": [
+        "error",
+        {
+          default: "disallow",
+          rules: [
+            { from: ["features"], allow: ["entities", "shared"] },
+            { from: ["entities"], allow: ["shared"] },
+            { from: ["widgets"], allow: ["features", "entities", "shared"] },
+            {
+              from: ["pages"],
+              allow: ["widgets", "features", "entities", "shared"],
+            },
+            {
+              from: ["processes"],
+              allow: ["pages", "widgets", "features", "entities", "shared"],
+            },
+            {
+              from: ["app"],
+              allow: [
+                "processes",
+                "pages",
+                "widgets",
+                "features",
+                "entities",
+                "shared",
+              ],
+            },
+          ],
+        },
+      ],
+    },
   },
   {
     name: "eslint",

@@ -20,6 +20,7 @@ export default defineConfig(temisConfigs);
 | [@next/eslint-plugin-next](https://nextjs.org/docs/app/api-reference/config/eslint) | v15.3.2     |
 | @vitest/eslint-plugin                                                               | v1.1.43     |
 | eslint                                                                              | v9.25.1     |
+| eslint-plugin-boundaries                                                            | v5.0.1      |
 | eslint-plugin-import                                                                | v2.31.0     |
 | eslint-plugin-jsdoc                                                                 | v50.6.9     |
 | eslint-plugin-jsx-a11y                                                              | v.6.10.2    |
