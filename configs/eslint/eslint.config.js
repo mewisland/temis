@@ -10,9 +10,13 @@ import jsdoc from "eslint-plugin-jsdoc";
 import pluginImport from "eslint-plugin-import";
 import stylistic from "@stylistic/eslint-plugin";
 import pluginSonar from "eslint-plugin-sonarjs";
+import pluginNext from "@next/eslint-plugin-next";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
+import pluginUnicorn from "eslint-plugin-unicorn";
 import vitest from "@vitest/eslint-plugin";
+import pluginBoundaries from "eslint-plugin-boundaries";
+import perfectionist from "eslint-plugin-perfectionist";
 
 export default defineConfig([
   {
@@ -29,6 +33,74 @@ export default defineConfig([
     name: "global/globals",
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: { globals: globals.browser },
+  },
+  {
+    name: "boundaries",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    settings: {
+      "boundaries/elements": [
+        { type: "shared", pattern: "src/shared/*" },
+        { type: "entities", pattern: "src/entities/*" },
+        { type: "features", pattern: "src/features/*" },
+        { type: "widgets", pattern: "src/widgets/*" },
+        { type: "pages", pattern: "src/pages/*" },
+        { type: "processes", pattern: "src/processes/*" },
+        { type: "app", pattern: "src/app" },
+      ],
+    },
+    plugins: {
+      boundaries: pluginBoundaries,
+    },
+    rules: {
+      ...pluginBoundaries.configs.recommended.rules,
+      "boundaries/element-types": [
+        "error",
+        {
+          default: "disallow",
+          rules: [
+            { from: ["features"], allow: ["entities", "shared"] },
+            { from: ["entities"], allow: ["shared"] },
+            { from: ["widgets"], allow: ["features", "entities", "shared"] },
+            {
+              from: ["pages"],
+              allow: ["widgets", "features", "entities", "shared"],
+            },
+            {
+              from: ["processes"],
+              allow: ["pages", "widgets", "features", "entities", "shared"],
+            },
+            {
+              from: ["app"],
+              allow: [
+                "processes",
+                "pages",
+                "widgets",
+                "features",
+                "entities",
+                "shared",
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    name: "perfectionist",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    ...perfectionist.configs["recommended-natural"],
+    plugins: {
+      perfectionist,
+    },
+    rules: {
+      "perfectionist/sort-imports": [
+        "error",
+        {
+          type: "natural",
+          order: "asc",
+        },
+      ],
+    },
   },
   {
     name: "eslint",
@@ -49,7 +121,7 @@ export default defineConfig([
       ...tseslint.configs.strictTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
     ],
-    files: ["**/*.{ts,tsx}"],
+    files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
       parserOptions: {
         projectService: true,
@@ -61,9 +133,24 @@ export default defineConfig([
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/consistent-type-exports": "error",
       "@typescript-eslint/consistent-type-imports": "error",
+      "@typescript-eslint/naming-convention": [
+        "warn",
+        {
+          selector: "variable",
+          format: ["camelCase"],
+          regex:
+            "^(?!data$|info$|value$|temp$|obj$|thing$|stuff$|item$|flag$|obj\\d*|data\\d*|tmp\\d*).+$",
+          match: true,
+        },
+      ],
       "@typescript-eslint/require-array-sort-compare": "error",
       "@typescript-eslint/switch-exhaustiveness-check": "error",
     },
+  },
+  {
+    name: "unicorn",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    ...pluginUnicorn.configs.recommended,
   },
   {
     name: "jsdoc",
@@ -279,6 +366,17 @@ export default defineConfig([
     name: "jsx-a11y",
     files: ["**/*.{jsx,tsx}"],
     extends: [pluginJsxA11y.flatConfigs.recommended],
+  },
+  {
+    name: "Next.js",
+    files: ["**/*.{jsx,tsx}"],
+    plugins: {
+      "@next/next": pluginNext,
+    },
+    rules: {
+      ...pluginNext.configs.recommended.rules,
+      ...pluginNext.configs["core-web-vitals"].rules,
+    },
   },
   {
     name: "vitest",
