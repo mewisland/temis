@@ -17,6 +17,7 @@ import pluginUnicorn from "eslint-plugin-unicorn";
 import vitest from "@vitest/eslint-plugin";
 import pluginBoundaries from "eslint-plugin-boundaries";
 import perfectionist from "eslint-plugin-perfectionist";
+import importAccess from "eslint-plugin-import-access/flat-config";
 
 export default defineConfig([
   {
@@ -272,6 +273,16 @@ export default defineConfig([
     rules: {
       "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
       "import/no-duplicates": "error",
+    },
+  },
+  {
+    name: "import-access",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    plugins: {
+      "import-access": importAccess,
+    },
+    rules: {
+      "import-access/jsdoc": ["error"],
     },
   },
   {

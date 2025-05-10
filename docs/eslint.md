@@ -1,11 +1,29 @@
 ## Usage
 
+### eslint.config.js
+
 ```js
 import { defineConfig } from "eslint/config";
 
 import temisConfigs from "temis/eslint";
 
 export default defineConfig(temisConfigs);
+```
+
+### tsconfig.json
+
+```jsonc
+{
+  "compilerOptions": {
+    // ...
+    "plugins": [
+      // ...
+      {
+        "name": "eslint-plugin-import-access"
+      }
+    ]
+  }
+}
 ```
 
 ## Support Plugins
@@ -22,6 +40,7 @@ export default defineConfig(temisConfigs);
 | eslint                                                                              | v9.25.1     |
 | eslint-plugin-boundaries                                                            | v5.0.1      |
 | eslint-plugin-import                                                                | v2.31.0     |
+| [eslint-plugin-import-access](https://github.com/uhyo/eslint-plugin-import-access)  | v2.2.0      |
 | eslint-plugin-jsdoc                                                                 | v50.6.9     |
 | eslint-plugin-jsx-a11y                                                              | v6.10.2     |
 | [eslint-plugin-perfectionist](https://perfectionist.dev)                            | v4.12.3     |
