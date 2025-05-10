@@ -12,6 +12,7 @@ import stylistic from "@stylistic/eslint-plugin";
 import pluginSonar from "eslint-plugin-sonarjs";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
+import pluginUnicorn from "eslint-plugin-unicorn";
 import vitest from "@vitest/eslint-plugin";
 
 export default defineConfig([
@@ -64,6 +65,11 @@ export default defineConfig([
       "@typescript-eslint/require-array-sort-compare": "error",
       "@typescript-eslint/switch-exhaustiveness-check": "error",
     },
+  },
+  {
+    name: "unicorn",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    ...pluginUnicorn.configs.recommended,
   },
   {
     name: "jsdoc",
