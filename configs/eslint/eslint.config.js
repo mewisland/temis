@@ -16,6 +16,7 @@ import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 import pluginUnicorn from "eslint-plugin-unicorn";
 import vitest from "@vitest/eslint-plugin";
 import pluginBoundaries from "eslint-plugin-boundaries";
+import perfectionist from "eslint-plugin-perfectionist";
 
 export default defineConfig([
   {
@@ -35,6 +36,7 @@ export default defineConfig([
   },
   {
     name: "boundaries",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     settings: {
       "boundaries/elements": [
         { type: "shared", pattern: "src/shared/*" },
@@ -79,6 +81,23 @@ export default defineConfig([
               ],
             },
           ],
+        },
+      ],
+    },
+  },
+  {
+    name: "perfectionist",
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    ...perfectionist.configs["recommended-natural"],
+    plugins: {
+      perfectionist,
+    },
+    rules: {
+      "perfectionist/sort-imports": [
+        "error",
+        {
+          type: "natural",
+          order: "asc",
         },
       ],
     },
