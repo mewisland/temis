@@ -23,7 +23,7 @@ export default defineConfig(temisConfigs);
 | eslint-plugin-boundaries                                                            | v5.0.1      |
 | eslint-plugin-import                                                                | v2.31.0     |
 | eslint-plugin-jsdoc                                                                 | v50.6.9     |
-| eslint-plugin-jsx-a11y                                                              | v.6.10.2    |
+| eslint-plugin-jsx-a11y                                                              | v6.10.2     |
 | [eslint-plugin-perfectionist](https://perfectionist.dev)                            | v4.12.3     |
 | eslint-plugin-react                                                                 | v7.37.5     |
 | eslint-plugin-react-hooks                                                           | v6.0.0-rc.1 |
