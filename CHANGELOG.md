@@ -1,5 +1,12 @@
 # temis
 
+## [0.7.1](https://github.com/mewisland/temis/compare/v0.7.0...v0.7.1) (2025-05-10)
+
+
+### Bug Fixes
+
+* **configs/eslint:** ⏪️ delete @typescript-eslint/naming-convention ([0436ba9](https://github.com/mewisland/temis/commit/0436ba903bc24e36a8dc6694d177350c5cabd984))
+
 ## [0.7.0](https://github.com/mewisland/temis/compare/v0.6.0...v0.7.0) (2025-05-10)
 
 
