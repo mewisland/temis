@@ -10,6 +10,7 @@ import jsdoc from "eslint-plugin-jsdoc";
 import pluginImport from "eslint-plugin-import";
 import stylistic from "@stylistic/eslint-plugin";
 import pluginSonar from "eslint-plugin-sonarjs";
+import pluginNext from "@next/eslint-plugin-next";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 import pluginUnicorn from "eslint-plugin-unicorn";
@@ -285,6 +286,17 @@ export default defineConfig([
     name: "jsx-a11y",
     files: ["**/*.{jsx,tsx}"],
     extends: [pluginJsxA11y.flatConfigs.recommended],
+  },
+  {
+    name: "Next.js",
+    files: ["**/*.{jsx,tsx}"],
+    plugins: {
+      "@next/next": pluginNext,
+    },
+    rules: {
+      ...pluginNext.configs.recommended.rules,
+      ...pluginNext.configs["core-web-vitals"].rules,
+    },
   },
   {
     name: "vitest",
