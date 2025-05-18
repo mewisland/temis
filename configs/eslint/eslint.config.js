@@ -18,6 +18,7 @@ import vitest from "@vitest/eslint-plugin";
 import pluginBoundaries from "eslint-plugin-boundaries";
 import perfectionist from "eslint-plugin-perfectionist";
 import importAccess from "eslint-plugin-import-access/flat-config";
+import playwright from "eslint-plugin-playwright";
 
 export default defineConfig([
   {
@@ -409,6 +410,38 @@ export default defineConfig([
     rules: {
       ...vitest.configs.all.rules,
       "vitest/no-done-callback": "off",
+    },
+  },
+  {
+    name: "playwright",
+    files: ["**/*.e2e.test.{js,mjs,cjs,ts,jsx,tsx}"],
+    plugins: { playwright },
+    rules: {
+      ...playwright.configs["flat/recommended"].rules,
+      "playwright/no-commented-out-tests": "error",
+      "playwright/no-get-by-title": "error",
+      "playwright/no-hooks": "error",
+      "playwright/no-nth-methods": "error",
+      "playwright/no-raw-locators": "error",
+      "playwright/no-restricted-matchers": [
+        "error",
+        {
+          not: null,
+        },
+      ],
+      "playwright/no-slowed-tests": "error",
+      "playwright/prefer-equality-matchers": "error",
+      "playwright/prefer-hooks-in-order": "error",
+      "playwright/prefer-locators": "error",
+      "playwright/prefer-native-locators": "error",
+      "playwright/prefer-strict-equal": "error",
+      "playwright/prefer-to-be": "error",
+      "playwright/prefer-to-contain": "error",
+      "playwright/prefer-to-have-count": "error",
+      "playwright/prefer-to-have-length": "error",
+      "playwright/require-hook": "error",
+      "playwright/require-to-throw-message": "error",
+      "playwright/require-top-level-describe": "error",
     },
   },
   {
