@@ -481,5 +481,5 @@ export default defineConfig([
     language: "css/css",
     extends: ["css/recommended"],
   },
-  ...oxlint.buildFromOxlintConfigFile("../oxlint/.oxlint.json"),
+  ...oxlint.buildFromOxlintConfigFile("../oxlint/.oxlintrc.json"),
 ]);
