@@ -19,6 +19,7 @@ import pluginBoundaries from "eslint-plugin-boundaries";
 import perfectionist from "eslint-plugin-perfectionist";
 import importAccess from "eslint-plugin-import-access/flat-config";
 import playwright from "eslint-plugin-playwright";
+import oxlint from "eslint-plugin-oxlint";
 
 export default defineConfig([
   {
@@ -479,4 +480,5 @@ export default defineConfig([
     language: "css/css",
     extends: ["css/recommended"],
   },
+  ...oxlint.buildFromOxlintConfigFile("../oxlint/.oxlint.json"),
 ]);
