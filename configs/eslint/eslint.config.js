@@ -145,6 +145,7 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     ...pluginUnicorn.configs.recommended,
     rules: {
+      ...pluginUnicorn.configs.recommended.rules,
       "unicorn/prevent-abbreviations": [
         "error",
         {
