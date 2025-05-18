@@ -1,5 +1,20 @@
 # temis
 
+## [0.8.0](https://github.com/mewisland/temis/compare/v0.7.1...v0.8.0) (2025-05-18)
+
+
+### Features
+
+* **configs/eslint:** ✨ add eslint-plugin-playwright ([69f441a](https://github.com/mewisland/temis/commit/69f441a21c9e0f6be077f47adc9589a6d3e2d415))
+* **configs/eslint:** ✨ add unicorn/prevent-abbreviations ([94a634a](https://github.com/mewisland/temis/commit/94a634a8425f748af711a90a46292e39fd7a4420))
+* **configs/oxlint:** ✨ add oxlint ([919f7d9](https://github.com/mewisland/temis/commit/919f7d9dfcaa80231e613da8137bc1c3fe14fe58))
+
+
+### Bug Fixes
+
+* fix eslint-plugin-unicorn rules syntax ([d36bc22](https://github.com/mewisland/temis/commit/d36bc22f6bd5428ebbab9448bb2a0bbd28d77a38))
+* typo .oxlintrc.json path ([72c9597](https://github.com/mewisland/temis/commit/72c959716f7a8779857dac84d8a52a6cc61feb01))
+
 ## [0.7.1](https://github.com/mewisland/temis/compare/v0.7.0...v0.7.1) (2025-05-10)
 
 
