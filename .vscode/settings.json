@@ -2,6 +2,7 @@
   "conventionalCommits.scopes": [
     "deps",
     "release",
-    "configs/eslint"
+    "configs/eslint",
+    "configs/oxlint"
   ]
 }

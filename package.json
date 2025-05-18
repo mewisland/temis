@@ -18,7 +18,8 @@
     "./biome": "./configs/biome/v1/biome.json",
     "./biome/v1": "./configs/biome/v1/biome.json",
     "./biome/v2": "./configs/biome/v2/biome.json",
-    "./eslint": "./configs/eslint/eslint.config.js"
+    "./eslint": "./configs/eslint/eslint.config.js",
+    "./oxlint": "./configs/oxlint/.oxlintrc.json"
   },
   "files": [
     "configs"
@@ -41,7 +42,9 @@
     "eslint-plugin-import-access": "3.0.0",
     "eslint-plugin-jsdoc": "50.6.9",
     "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-oxlint": "0.16.11",
     "eslint-plugin-perfectionist": "4.12.3",
+    "eslint-plugin-playwright": "2.2.0",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "6.0.0-rc.1",
     "eslint-plugin-sonarjs": "3.0.2",
@@ -53,8 +56,8 @@
     "@biomejs/biome": "1.9.4",
     "@types/node": "22.13.9",
     "commitlint": "19.8.0",
-    "eslint-plugin-playwright": "2.2.0",
-    "lefthook": "1.11.3"
+    "lefthook": "1.11.3",
+    "oxlint": "0.16.11"
   },
   "engines": {
     "node": ">=22",

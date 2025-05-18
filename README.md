@@ -26,6 +26,7 @@ A package that keeps all the settings for great tools in one place, making my Ty
 - [commitlint](https://github.com/conventional-changelog/commitlint) v19.8.0
 - [ESLint](https://github.com/eslint/eslint) v9.27.0
   - with [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) v8.31.0, and more plugins
+- [oxlint](https://oxc.rs) v0.16.11
 
 ## Installation
 
