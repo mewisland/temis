@@ -4,6 +4,7 @@
     "configs/eslint",
     "configs/oxlint",
     "deps",
-    "release"
+    "release",
+    "tests"
   ]
 }

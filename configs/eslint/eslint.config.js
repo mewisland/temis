@@ -139,21 +139,24 @@ export default defineConfig([
       "@typescript-eslint/switch-exhaustiveness-check": "error",
     },
   },
+  // eslint-plugin-unicorn
   {
-    name: "unicorn",
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    name: "unicorn/ts",
+    files: ["**/*.{js,mjs,cjs,ts}"],
     ...pluginUnicorn.configs.recommended,
     rules: {
       ...pluginUnicorn.configs.recommended.rules,
-      "unicorn/prevent-abbreviations": [
-        "error",
-        {
-          allowList: {
-            dynamicParams: true,
-            generateStaticParams: true,
-          },
-        },
-      ],
+      "unicorn/prevent-abbreviations": "off",
+    },
+  },
+  {
+    name: "unicorn/tsx",
+    files: ["**/*.{jsx,tsx}"],
+    ...pluginUnicorn.configs.recommended,
+    rules: {
+      ...pluginUnicorn.configs.recommended.rules,
+      "unicorn/no-null": "off",
+      "unicorn/prevent-abbreviations": "off",
     },
   },
   {
@@ -247,9 +250,52 @@ export default defineConfig([
           ],
         },
       ],
-      "jsdoc/require-description": ["off"],
-      "jsdoc/require-jsdoc": ["off"],
-      "jsdoc/require-param": ["off"],
+      "jsdoc/require-description": [
+        "error",
+        {
+          contexts: [
+            "ArrowFunctionExpression",
+            "ClassDeclaration",
+            "ClassExpression",
+            "FunctionDeclaration",
+            "FunctionExpression",
+            "MethodDefinition",
+            "PropertyDefinition",
+            "VariableDeclaration",
+            "TSInterfaceDeclaration",
+            "TSTypeAliasDeclaration",
+            "TSPropertySignature",
+            "TSMethodSignature",
+          ],
+        },
+      ],
+      "jsdoc/require-jsdoc": [
+        "error",
+        {
+          publicOnly: true,
+          require: {
+            ArrowFunctionExpression: true,
+            ClassDeclaration: true,
+            ClassExpression: true,
+            FunctionDeclaration: true,
+            FunctionExpression: true,
+            MethodDefinition: true,
+          },
+          contexts: [
+            "VariableDeclaration",
+            "TSInterfaceDeclaration",
+            "TSTypeAliasDeclaration",
+            "TSPropertySignature",
+            "TSMethodSignature",
+          ],
+        },
+      ],
+      "jsdoc/require-param": [
+        "error",
+        {
+          checkDestructuredRoots: false,
+        },
+      ],
       "jsdoc/require-returns": ["off"],
       "jsdoc/sort-tags": [
         "error",
