@@ -155,6 +155,7 @@ export default defineConfig([
     ...pluginUnicorn.configs.recommended,
     rules: {
       ...pluginUnicorn.configs.recommended.rules,
+      "unicorn/no-null": "off",
       "unicorn/prevent-abbreviations": "off",
     },
   },
