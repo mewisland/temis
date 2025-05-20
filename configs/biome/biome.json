@@ -56,7 +56,8 @@
       "performance": {},
       "security": {},
       "style": {
-        "noDefaultExport": "off"
+        "noDefaultExport": "off",
+        "useNamingConvention": "off"
       },
       "suspicious": {}
     }

@@ -1,8 +1,9 @@
 {
   "conventionalCommits.scopes": [
-    "deps",
-    "release",
+    "configs/biome",
     "configs/eslint",
-    "configs/oxlint"
+    "configs/oxlint",
+    "deps",
+    "release"
   ]
 }
