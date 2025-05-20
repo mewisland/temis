@@ -3,6 +3,7 @@
     "deps",
     "release",
     "configs/eslint",
-    "configs/oxlint"
+    "configs/oxlint",
+    "tests"
   ]
 }
