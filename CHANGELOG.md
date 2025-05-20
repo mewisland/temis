@@ -1,5 +1,23 @@
 # temis
 
+## [0.9.0](https://github.com/mewisland/temis/compare/v0.8.0...v0.9.0) (2025-05-20)
+
+
+### Features
+
+* **configs/biome:** ✨ useNamingConvention is off ([faa53d7](https://github.com/mewisland/temis/commit/faa53d7162095aa7a7d12a66f00f1040244ab008))
+* **configs/biome:** useNamingConvention is off ([#46](https://github.com/mewisland/temis/issues/46)) ([2b4f55c](https://github.com/mewisland/temis/commit/2b4f55c9c1ce9470b63bd22ed04fc265167862a8))
+* **configs/eslint:** ✨ add jsdoc rules ([7466ac9](https://github.com/mewisland/temis/commit/7466ac9253333d97cef2712b3a1cb2592e52207e))
+* **configs/eslint:** ✨ add no-null for tsx ([ee46157](https://github.com/mewisland/temis/commit/ee461578cb02c5f7b539a34aa6d964a06f282b59))
+* **configs/eslint:** ✨ add react-you-might-not-need-an-effect ([9ed8039](https://github.com/mewisland/temis/commit/9ed803944eedb608087a0bf4a5b6d7720a82631c))
+* **configs/eslint:** ✨ remove prevent-abbreviations ([47ca03b](https://github.com/mewisland/temis/commit/47ca03b464d0430a666d0c4e3b9946c6e23790b1))
+
+
+### Bug Fixes
+
+* **configs/eslint:** 🐛 remove eslint-plugin-oxlint syntax ([#39](https://github.com/mewisland/temis/issues/39)) ([c1e9d9c](https://github.com/mewisland/temis/commit/c1e9d9c3f17517a2272e301a8bcee3be04e47d87))
+* **configs/eslint:** 🐛 remove eslint-plugin-oxlint syntax ([#39](https://github.com/mewisland/temis/issues/39)) ([de45bda](https://github.com/mewisland/temis/commit/de45bdaa2333a3529b58d7fa7e6dc70acdd4bace))
+
 ## [0.8.0](https://github.com/mewisland/temis/compare/v0.7.1...v0.8.0) (2025-05-18)
 
 
