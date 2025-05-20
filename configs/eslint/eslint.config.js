@@ -139,21 +139,23 @@ export default defineConfig([
       "@typescript-eslint/switch-exhaustiveness-check": "error",
     },
   },
+  // eslint-plugin-unicorn
   {
-    name: "unicorn",
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    name: "unicorn/ts",
+    files: ["**/*.{js,mjs,cjs,ts}"],
     ...pluginUnicorn.configs.recommended,
     rules: {
       ...pluginUnicorn.configs.recommended.rules,
-      "unicorn/prevent-abbreviations": [
-        "error",
-        {
-          allowList: {
-            dynamicParams: true,
-            generateStaticParams: true,
-          },
-        },
-      ],
+      "unicorn/prevent-abbreviations": "off",
+    },
+  },
+  {
+    name: "unicorn/tsx",
+    files: ["**/*.{jsx,tsx}"],
+    ...pluginUnicorn.configs.recommended,
+    rules: {
+      ...pluginUnicorn.configs.recommended.rules,
+      "unicorn/prevent-abbreviations": "off",
     },
   },
   {
