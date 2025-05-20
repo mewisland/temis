@@ -19,7 +19,7 @@ import pluginBoundaries from "eslint-plugin-boundaries";
 import perfectionist from "eslint-plugin-perfectionist";
 import importAccess from "eslint-plugin-import-access/flat-config";
 import playwright from "eslint-plugin-playwright";
-import oxlint from "eslint-plugin-oxlint";
+import youMightNotNeedAnEffect from "eslint-plugin-react-you-might-not-need-an-effect";
 
 export default defineConfig([
   {
@@ -140,21 +140,24 @@ export default defineConfig([
       "@typescript-eslint/switch-exhaustiveness-check": "error",
     },
   },
+  // eslint-plugin-unicorn
   {
-    name: "unicorn",
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    name: "unicorn/ts",
+    files: ["**/*.{js,mjs,cjs,ts}"],
     ...pluginUnicorn.configs.recommended,
     rules: {
       ...pluginUnicorn.configs.recommended.rules,
-      "unicorn/prevent-abbreviations": [
-        "error",
-        {
-          allowList: {
-            dynamicParams: true,
-            generateStaticParams: true,
-          },
-        },
-      ],
+      "unicorn/prevent-abbreviations": "off",
+    },
+  },
+  {
+    name: "unicorn/tsx",
+    files: ["**/*.{jsx,tsx}"],
+    ...pluginUnicorn.configs.recommended,
+    rules: {
+      ...pluginUnicorn.configs.recommended.rules,
+      "unicorn/no-null": "off",
+      "unicorn/prevent-abbreviations": "off",
     },
   },
   {
@@ -248,9 +251,52 @@ export default defineConfig([
           ],
         },
       ],
-      "jsdoc/require-description": ["off"],
-      "jsdoc/require-jsdoc": ["off"],
-      "jsdoc/require-param": ["off"],
+      "jsdoc/require-description": [
+        "error",
+        {
+          contexts: [
+            "ArrowFunctionExpression",
+            "ClassDeclaration",
+            "ClassExpression",
+            "FunctionDeclaration",
+            "FunctionExpression",
+            "MethodDefinition",
+            "PropertyDefinition",
+            "VariableDeclaration",
+            "TSInterfaceDeclaration",
+            "TSTypeAliasDeclaration",
+            "TSPropertySignature",
+            "TSMethodSignature",
+          ],
+        },
+      ],
+      "jsdoc/require-jsdoc": [
+        "error",
+        {
+          publicOnly: true,
+          require: {
+            ArrowFunctionExpression: true,
+            ClassDeclaration: true,
+            ClassExpression: true,
+            FunctionDeclaration: true,
+            FunctionExpression: true,
+            MethodDefinition: true,
+          },
+          contexts: [
+            "VariableDeclaration",
+            "TSInterfaceDeclaration",
+            "TSTypeAliasDeclaration",
+            "TSPropertySignature",
+            "TSMethodSignature",
+          ],
+        },
+      ],
+      "jsdoc/require-param": [
+        "error",
+        {
+          checkDestructuredRoots: false,
+        },
+      ],
       "jsdoc/require-returns": ["off"],
       "jsdoc/sort-tags": [
         "error",
@@ -353,6 +399,9 @@ export default defineConfig([
       pluginReact.configs.flat["jsx-runtime"],
       pluginReactHooks.configs.recommended,
     ],
+    plugins: {
+      "react-you-might-not-need-an-effect": youMightNotNeedAnEffect,
+    },
     rules: {
       "react/destructuring-assignment": "error",
       "react/function-component-definition": [
@@ -375,6 +424,7 @@ export default defineConfig([
       "react/prop-types": "off",
       "react/self-closing-comp": "error",
       "react-hooks/exhaustive-deps": "error",
+      "react-you-might-not-need-an-effect/you-might-not-need-an-effect": "warn",
     },
   },
   {
@@ -481,5 +531,4 @@ export default defineConfig([
     language: "css/css",
     extends: ["css/recommended"],
   },
-  ...oxlint.buildFromOxlintConfigFile("../oxlint/.oxlintrc.json"),
 ]);
