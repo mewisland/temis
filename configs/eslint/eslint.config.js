@@ -19,6 +19,7 @@ import pluginBoundaries from "eslint-plugin-boundaries";
 import perfectionist from "eslint-plugin-perfectionist";
 import importAccess from "eslint-plugin-import-access/flat-config";
 import playwright from "eslint-plugin-playwright";
+import youMightNotNeedAnEffect from "eslint-plugin-react-you-might-not-need-an-effect";
 
 export default defineConfig([
   {
@@ -398,6 +399,9 @@ export default defineConfig([
       pluginReact.configs.flat["jsx-runtime"],
       pluginReactHooks.configs.recommended,
     ],
+    plugins: {
+      "react-you-might-not-need-an-effect": youMightNotNeedAnEffect,
+    },
     rules: {
       "react/destructuring-assignment": "error",
       "react/function-component-definition": [
@@ -420,6 +424,7 @@ export default defineConfig([
       "react/prop-types": "off",
       "react/self-closing-comp": "error",
       "react-hooks/exhaustive-deps": "error",
+      "react-you-might-not-need-an-effect/you-might-not-need-an-effect": "warn",
     },
   },
   {
