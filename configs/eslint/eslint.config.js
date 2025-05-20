@@ -250,9 +250,52 @@ export default defineConfig([
           ],
         },
       ],
-      "jsdoc/require-description": ["off"],
-      "jsdoc/require-jsdoc": ["off"],
-      "jsdoc/require-param": ["off"],
+      "jsdoc/require-description": [
+        "error",
+        {
+          contexts: [
+            "ArrowFunctionExpression",
+            "ClassDeclaration",
+            "ClassExpression",
+            "FunctionDeclaration",
+            "FunctionExpression",
+            "MethodDefinition",
+            "PropertyDefinition",
+            "VariableDeclaration",
+            "TSInterfaceDeclaration",
+            "TSTypeAliasDeclaration",
+            "TSPropertySignature",
+            "TSMethodSignature",
+          ],
+        },
+      ],
+      "jsdoc/require-jsdoc": [
+        "error",
+        {
+          publicOnly: true,
+          require: {
+            ArrowFunctionExpression: true,
+            ClassDeclaration: true,
+            ClassExpression: true,
+            FunctionDeclaration: true,
+            FunctionExpression: true,
+            MethodDefinition: true,
+          },
+          contexts: [
+            "VariableDeclaration",
+            "TSInterfaceDeclaration",
+            "TSTypeAliasDeclaration",
+            "TSPropertySignature",
+            "TSMethodSignature",
+          ],
+        },
+      ],
+      "jsdoc/require-param": [
+        "error",
+        {
+          checkDestructuredRoots: false,
+        },
+      ],
       "jsdoc/require-returns": ["off"],
       "jsdoc/sort-tags": [
         "error",
